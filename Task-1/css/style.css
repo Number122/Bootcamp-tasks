@@ -1,0 +1,148 @@
+:root {
+  --color1: #219f95;
+  --color2: #234894;
+  --color3-1: #afcedd;
+  --color5: #1e1e1e;
+  --color5-3: #696969;
+  --green: #60c164;
+  --black: #000000;
+  --white: #ffffff;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-full: 50%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Vazirmatn;
+}
+
+body {
+  background-color: var(--white);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  color: var(--color5);
+  margin-bottom: 2rem;
+}
+
+.request-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  width: 100%;
+  min-width: 300px;
+  flex-shrink: 0;
+}
+
+.request-header {
+  background-color: var(--);
+  color: var(--color2);
+  font-weight: 700;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--color3-1);
+}
+
+.request-number {
+  background-color: var(--color3-1);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+}
+
+.request-date {
+  margin-right: auto;
+  color: var(--color5-3);
+  font-size: 0.9rem;
+}
+
+.request-content {
+  padding: 1.5rem;
+}
+
+.request-info h3 {
+  color: var(--color5);
+  margin-bottom: 0.5rem;
+}
+
+.request-id {
+  color: var(--color5-3);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.request-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.request-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.request-username {
+  color: var(--color5);
+  font-weight: 500;
+}
+
+button {
+  margin-right: auto;
+  background-color: var(--color1);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.request-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.scroll {
+  font-size: 0.8rem;
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .request-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .request-card {
+    scroll-snap-align: start;
+    width: 300px;
+  }
+  .scroll {
+    display: block;
+  }
+}
